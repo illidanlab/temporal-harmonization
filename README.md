@@ -11,14 +11,14 @@ Mild Cognitive Impairment (MCI) is an early stage of dementia characterized by c
 Use `conda env create -f environment.yml` to create a conda env and activate by `conda activate temporal-harmonization`.
 
 ## Language Marker Extractor
-To extract language marker from the transcripts, you need to extract syntactic complexity features using [L2 Syntactic Complexity Analyzer](https://sites.psu.edu/xxl13/l2sca/). We can also use GUI from [neosca GitHub Repo](https://github.com/tanloong/neosca) to extract syntatic features.
+To extract language marker from the transcripts, you need to extract syntactic complexity features using [L2 Syntactic Complexity Analyzer](https://sites.psu.edu/xxl13/l2sca/). You can also use GUI from [neosca GitHub Repo](https://github.com/tanloong/neosca) to extract syntactic features.
 
 After that, put your syntactic complexity feature in file `rawdata/syntactic_complexity_measures.csv` and your transcripts data in folder `Transcriptions`, then run command ```python feature_extractor.py```
 
 It will give you 99-dimensional language marker feature in `rawdata/id2feature.p`
 
 ## Temporal Methods
-Here we provide several demos of using harminzation commands. Remember to use your own transcripts data in Transcriptions folder, the existing data in repo is just for demo.
+Here we provide several demos of using harmonization commands. Remember to use your own transcripts data in Transcriptions folder, the existing data in repo is just for demo.
 
 - **None Harmonization:**
 
@@ -32,7 +32,7 @@ Here we provide several demos of using harminzation commands. Remember to use yo
 - **Temporal Harmonization (Proposed Method):**
     - Run ```python main.py --solver temporal_sequence_harmonization_adversarial_solver```
 
-We also provide options to reproduce the same experiments from the paper:
+We also provide options to reproduce the experiments from the paper:
 - **Main Performance**:
     - Run ```python main.py --experiment Performance```
 - **Sequence Length**:
