@@ -24,10 +24,6 @@ Here we provide several demos of using harminzation commands. Remember to use yo
 
     - No Temporal Language Markers (Majority Voting): ```python main.py --solver Standard_solver```
     - Temporal Language Markers: ```python main.py --solver temporal_solver``` 
-
-- **Generalized least squares:**
-  
-    - Run ```python main.py --solver Baseline_confounder_solver```
  
 - **Subject Harmonization ([Paper](https://pubmed.ncbi.nlm.nih.gov/38160279/)):**
   
@@ -37,6 +33,8 @@ Here we provide several demos of using harminzation commands. Remember to use yo
     - Run ```python main.py --solver temporal_sequence_harmonization_adversarial_solver```
 
 We also provide options to reproduce the same experiments from the paper: MaskTest, Coefficients, Main, FeatureImportance
+- **Main Performance**:
+    - Run ```python main.py --experiment Performance```
 - **Sequence Length**:
     - Run ```python main.py --experiment MaskTest```
 - **Loss weighting factors**:
