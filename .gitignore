@@ -3,9 +3,10 @@ __pycache__/
 *.py[cod]
 *$py.class
 
+checkpoints/
 # C extensions
 *.so
-
+*.pt
 # Distribution / packaging
 .Python
 build/
