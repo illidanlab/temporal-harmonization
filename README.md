@@ -11,7 +11,7 @@ Mild Cognitive Impairment (MCI) is an early stage of dementia characterized by c
 Use `conda env create -f environment.yml` to create a conda env and activate by `conda activate temporal-harmonization`.
 
 ## Language Marker Extractor
-To extract language marker from the transcripts, you need to extract syntactic complexity features using [L2 Syntactic Complexity Analyzer](https://sites.psu.edu/xxl13/l2sca/). You can also use GUI from [neosca GitHub Repo](https://github.com/tanloong/neosca) to extract syntactic features.
+To extract language markers from the transcripts, you need to extract syntactic complexity features using [L2 Syntactic Complexity Analyzer](https://sites.psu.edu/xxl13/l2sca/). You can also use GUI from [neosca GitHub Repo](https://github.com/tanloong/neosca) to extract syntactic features.
 
 After that, put your syntactic complexity feature in file `rawdata/syntactic_complexity_measures.csv` and your transcripts data in folder `Transcriptions`, then run command ```python feature_extractor.py```
 
