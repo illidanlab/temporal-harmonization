@@ -32,7 +32,7 @@ Here we provide several demos of using harminzation commands. Remember to use yo
 - **Temporal Harmonization (Proposed Method):**
     - Run ```python main.py --solver temporal_sequence_harmonization_adversarial_solver```
 
-We also provide options to reproduce the same experiments from the paper: MaskTest, Coefficients, Main, FeatureImportance
+We also provide options to reproduce the same experiments from the paper:
 - **Main Performance**:
     - Run ```python main.py --experiment Performance```
 - **Sequence Length**:
