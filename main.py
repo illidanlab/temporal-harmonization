@@ -61,7 +61,7 @@ if __name__ == "__main__":
     parser.add_argument("--model_name", type = str, default="LSTM", required=False) # LSTM, GRU, RNN, LR, MLP
 
     # Performance, MaskTest, Coefficients, Main, FeatureImportance
-    parser.add_argument("--experiment", type=str, default= "Coefficients")
+    parser.add_argument("--experiment", type=str, default= "Main")
 
     # Configuration for Sequence
     parser.add_argument("--mask", type = int, default = 80, required=False)  
