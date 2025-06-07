@@ -1,5 +1,5 @@
 ## Temporal Harmonization: Improved Detection of Mild Cognitive Impairment from Temporal Language Markers using Subject-invariant Learning
-Official code for paper: "Temporal Harmonization: Improved Detection of Mild Cognitive Impairment from Temporal Language Markers using Subject-invariant Learning", Bao Hoang, Siqi Liang, Yijiang Pang, Hiroko H. Dodge, and Jiayu Zhou, AMIA 2025 (submitted).
+Official code for paper: "Temporal Harmonization: Improved Detection of Mild Cognitive Impairment from Temporal Language Markers using Subject-invariant Learning", Bao Hoang, Siqi Liang, Yijiang Pang, Hiroko H. Dodge, and Jiayu Zhou, AMIA 2025.
 
 ## Overview 
 
@@ -48,3 +48,4 @@ The AuxiliaryExperiments folder also contains scripts for subject differentiatio
 The data is available upon request at [https://www.i-conect.org/](https://www.i-conect.org/)
 
 ## Acknowledgement
+This material is based in part upon work supported by the National Science Foundation under Grant IIS-2212174, National Institute of Aging (NIA) 1RF1AG072449, National Institute of General Medical Sciences (NIGMS) 1R01GM145700.
