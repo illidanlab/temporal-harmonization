@@ -8,6 +8,7 @@ import torch.nn.functional as F
 from torch.nn.utils.rnn import pad_sequence
 import random
 from tools.utils import permute_feature
+import os
 
 def collate_fn(batch):
     data, labels, g, idx = zip(*batch)
@@ -82,6 +83,7 @@ class temporal_solver(Solver_Base):
         model, loss_train_trace = self.basic_train(model, dataloader_train, criterion, optimizer, lr_scheduler)
         
         # Save Weight
+        os.makedirs("weights", exist_ok=True)
         torch.save(model, f"weights/{self.cfg_proj.solver}_{self.cfg_proj.model_name}.pt")
 
         # Evaluation

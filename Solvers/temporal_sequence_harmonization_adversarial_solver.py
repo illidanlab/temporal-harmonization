@@ -7,6 +7,7 @@ from Models.rnn import RNN_temporal_harmonization
 import random
 from torch.utils.data import Dataset
 from tools.utils import permute_feature
+import os
 
 class CustomDataset(Dataset):
     def __init__(self, X, Y, G):
@@ -110,6 +111,7 @@ class temporal_sequence_harmonization_adversarial_solver(Solver_Base):
         model, loss_train_trace = self.train(model, dataloader_train, optimizer, lr_scheduler, epochs=self.cfg_m.training.epochs, alpha1 = self.cfg_m.alpha1, alpha2 = self.cfg_m.alpha2, alpha3 = self.cfg_m.alpha3)
 
         # Save Weight
+        os.makedirs("weights", exist_ok=True)
         torch.save(model, f"weights/{self.cfg_proj.solver}_{self.cfg_proj.model_name}.pt")
 
         # Evaluation

@@ -2,6 +2,7 @@ from Solvers.Solver_Base import Solver_Base
 import torch
 from torch.utils.data import DataLoader
 from Models.model import MLP_pytorch, CustomDataset
+import os
 
 class Standard_solver(Solver_Base):
     
@@ -24,6 +25,8 @@ class Standard_solver(Solver_Base):
         # Train classifier
         model, loss_train_trace = self.basic_train(model, dataloader_train, criterion, optimizer, lr_scheduler)
 
+        # Save Weight
+        os.makedirs("weights", exist_ok=True)
         torch.save(model, f"weights/{self.cfg_proj.solver}_{self.cfg_proj.model_name}.pt")
 
         # Evaluation
