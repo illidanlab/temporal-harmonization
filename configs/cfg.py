@@ -11,8 +11,8 @@ def init_cfg(cfg_proj):
     config.training.tol = 1e-4
 
     config.alpha1 = 0.5 # Adversarial Coefficient
-    config.alpha2 = 0.5 # 
-    config.alpha3 = 0.1
+    config.alpha2 = 0.5 # Temporal Tendency Regularization Coefficient
+    config.alpha3 = 0.1 # Temporal Smoothness Coefficient
 
     config.l2_lambda = None #or None
     config.l1_lambda = None
