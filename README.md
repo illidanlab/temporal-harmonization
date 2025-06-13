@@ -18,6 +18,8 @@ After that, put your syntactic complexity feature in file `rawdata/syntactic_com
 It will give you 99-dimensional language marker feature in `rawdata/id2feature.p`
 
 ## Temporal Methods
+![](performance.png) 
+
 Here we provide several demos of using harmonization commands. Remember to use your own transcripts data in Transcriptions folder, the existing data in repo is just for demo.
 
 - **None Harmonization:**
