@@ -106,6 +106,7 @@ class temporal_sequence_harmonization_adversarial_solver(Solver_Base):
         model = RNN_temporal_harmonization(input_dim = len(x_train_mask[0][0]), sbj_dim = len(list(set(g_train_mask))), task_in_dim = len(x_train_mask[0][0]), task_out_dim = self.cfg_m.data.dim_out, adversarial=True, name=self.cfg_proj.model_name) 
         model = model.to(self.device)
         
+        # Temporal Harmonization Training
         optimizer = None
         lr_scheduler = None
         model, loss_train_trace = self.train(model, dataloader_train, optimizer, lr_scheduler, epochs=self.cfg_m.training.epochs, alpha1 = self.cfg_m.alpha1, alpha2 = self.cfg_m.alpha2, alpha3 = self.cfg_m.alpha3)
@@ -159,7 +160,7 @@ class temporal_sequence_harmonization_adversarial_solver(Solver_Base):
                     lr_scheduler_D.step()
 
                 train_X, train_Y, train_G = train_X.float().to(self.device), train_Y.long().to(self.device), train_G.long().to(self.device)
-                [features, logits_sbj, logits_cog] = model(train_X, id = "0,1,2") #
+                [features, logits_sbj, logits_cog] = model(train_X, id = "0,1,2")
 
                 # Temporal Tendency Regularization Loss
                 loss_sbj_mse = loss_mse(train_X, features)
@@ -178,9 +179,11 @@ class temporal_sequence_harmonization_adversarial_solver(Solver_Base):
                 differences = features[:, 2:, :] - features[:, 1:-1, :]*2 + features[:, :-2, :] 
                 regu2 = torch.mean(torch.norm(differences, p = 2, dim = 2))
                 
+                # Proposed Loss
                 loss = loss_cog +  (loss_sbj_neg * alpha1) + (loss_sbj_mse * alpha2) + (regu1*alpha3) + (regu2*alpha3)
-        
                 loss_epoch_G.append(loss.item())
+
+                # Backpropagation
                 model.zero_grad()
                 optimizer_G.zero_grad()
                 loss.backward()

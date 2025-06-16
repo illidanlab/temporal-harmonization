@@ -4,6 +4,7 @@ class simpleRNN(torch.nn.Module):
     def __init__(self, input_dim, output_dim, bidirectional = False, seq2seq = False, adversarial = False, name = "GRU"):
         super(simpleRNN, self).__init__()
         if adversarial:
+            # Ensure Discriminator is not too strong
             self.hidden_size = 32
             self.num_layers = 2
         else:
@@ -57,7 +58,6 @@ class simpleRNN(torch.nn.Module):
         
 class RNN_temporal_harmonization(torch.nn.Module):
     # Proposed method
-    feature_idx = None
     def __init__(self, input_dim, sbj_dim, task_in_dim, task_out_dim, adversarial = False, name = "GRU"):
         super(RNN_temporal_harmonization, self).__init__()
         self.intput_dim = input_dim

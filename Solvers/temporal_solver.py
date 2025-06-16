@@ -137,7 +137,6 @@ class temporal_solver(Solver_Base):
                 
                 Y_hat = Y_hat if torch.is_tensor(Y_hat) else Y_hat[1]
             
-
                 loss = criterion(model, Y_hat, train_Y, l2_lambda = self.cfg_m.l2_lambda, l1_lambda = self.cfg_m.l1_lambda)
                 loss_epoch.append(loss.item())
 
